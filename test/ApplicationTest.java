@@ -1,23 +1,14 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static org.fest.assertions.Assertions.assertThat;
+import static play.mvc.Http.Status.OK;
+import static play.test.Helpers.charset;
+import static play.test.Helpers.contentAsString;
+import static play.test.Helpers.contentType;
+import static play.test.Helpers.status;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import org.junit.*;
+import org.junit.Test;
 
-import play.mvc.*;
-import play.test.*;
-import play.data.DynamicForm;
-import play.data.validation.ValidationError;
-import play.data.validation.Constraints.RequiredValidator;
-import play.i18n.Lang;
-import play.libs.F;
-import play.libs.F.*;
+import play.mvc.Result;
 import play.twirl.api.Content;
-
-import static play.test.Helpers.*;
-import static org.fest.assertions.Assertions.*;
 
 
 /**
@@ -36,17 +27,18 @@ public class ApplicationTest {
 
     @Test
     public void renderTemplate() {
-        Content html = views.html.index.render("HELLO, WORLD.", play.data.Form.form(models.Task.class));
+        Content html = views.html.index.render("HELLO, WORLD", play.data.Form.form(models.Task.class));
         assertThat(contentType(html)).isEqualTo("text/html");
-        assertThat(contentAsString(html)).contains("HELLO, WORLD.");
+        assertThat(contentAsString(html)).contains("HELLO, WORLD");
     }
 
-	@Test
+    @Test
     public void testIndex() {
         Result result = controllers.Application.index();
         assertThat(status(result)).isEqualTo(OK);
         assertThat(contentType(result)).isEqualTo("text/html");
         assertThat(charset(result)).isEqualTo("utf-8");
-        assertThat(contentAsString(result)).contains("HELLO, WORLD.");
+        assertThat(contentAsString(result)).contains("HELLO, WORLD");
     }
+
 }
