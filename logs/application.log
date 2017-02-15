@@ -1,0 +1,59 @@
+2017-02-15 12:02:49,614 - [INFO] - from play in pool-4-thread-7 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2017-02-15 12:02:58,045 - [ERROR] - from application in New I/O worker #1 
+
+
+! @7345bmhmn - Internal server error, for (GET) [/] ->
+
+play.api.PlayException: Cannot init the Global object[Global cannot be cast to play.GlobalSettings]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1.apply(Application.scala:59) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1.apply(Application.scala:53) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.WithDefaultGlobal$class.play$api$WithDefaultGlobal$$globalInstance(Application.scala:52) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$globalInstance$lzycompute(Application.scala:402) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$globalInstance(Application.scala:402) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.WithDefaultGlobal$class.global(Application.scala:68) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.DefaultApplication.global(Application.scala:402) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.WithDefaultConfiguration$class.play$api$WithDefaultConfiguration$$fullConfiguration(Application.scala:82) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.DefaultApplication.play$api$WithDefaultConfiguration$$fullConfiguration$lzycompute(Application.scala:402) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.DefaultApplication.play$api$WithDefaultConfiguration$$fullConfiguration(Application.scala:402) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.WithDefaultConfiguration$class.configuration(Application.scala:84) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.DefaultApplication.configuration(Application.scala:402) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.Application$class.$init$(Application.scala:274) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.DefaultApplication.<init>(Application.scala:406) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anon$1.<init>(ApplicationProvider.scala:144) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:144) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:130) ~[play_2.11-2.3.8.jar:2.3.8]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.11.1.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:130) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:128) ~[play_2.11-2.3.8.jar:2.3.8]
+	at scala.util.Success.flatMap(Try.scala:230) ~[scala-library-2.11.1.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:128) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) ~[play_2.11-2.3.8.jar:2.3.8]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.1.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.1.jar:na]
+Caused by: java.lang.ClassCastException: Global cannot be cast to play.GlobalSettings
+	at play.api.WithDefaultGlobal$class.play$api$WithDefaultGlobal$$javaGlobal(Application.scala:31) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$javaGlobal$lzycompute(Application.scala:402) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$javaGlobal(Application.scala:402) ~[play_2.11-2.3.8.jar:2.3.8]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1.apply(Application.scala:54) ~[play_2.11-2.3.8.jar:2.3.8]
+	... 30 common frames omitted
+
+2017-02-15 12:02:58,285 - [WARN] - from play in New I/O worker #1 
+No application found at invoker init
+
+2017-02-15 12:03:25,806 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:mysql://localhost:3306/sudoku] bound to JNDI as DefaultDS
+
+2017-02-15 12:03:26,153 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/sudoku
+
+2017-02-15 12:03:27,297 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
